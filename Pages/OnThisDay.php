@@ -63,13 +63,16 @@
                     $start = strtotime($target . ' -' . $i . ' year');
                     $end = strtotime($target . ' -' . $i . ' year 1 day');
                     
-                    $subsearch['created']['$>'] = date('Y-m-d 00:00:00', $start);
-                    $subsearch['created']['$<'] = date('Y-m-d 23:59:59', $end);  
+                    $subsearch['created']['$gt'] = date('Y-m-d 00:00:00', $start);
+                    $subsearch['created']['$lt'] = date('Y-m-d 23:59:59', $end);  
                     
-                    $count += \Idno\Common\Entity::countFromX($types, $subsearch);
-                    $subfeed  = \Idno\Common\Entity::getFromX($types, $subsearch, array()); 
-                    
-                    $feed = array_merge($feed, $subfeed);
+                    $subcount = \Idno\Common\Entity::countFromX($types, $subsearch);
+                    $subfeed = \Idno\Common\Entity::getFromX($types, $subsearch, array()); 
+
+                    if ($subcount > 0) {
+                        $count += $subcount;
+                        $feed = array_merge($feed, $subfeed);
+                    }    
                 }
 
                 if (!empty(\Idno\Core\Idno::site()->config()->description)) {
