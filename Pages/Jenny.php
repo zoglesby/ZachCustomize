@@ -8,8 +8,8 @@
             function getContent()
             {
                 header("HTTP/1.1 309 Don't Change Your Number");
-                header('Location: tel://+1-503-567-8642');
-                echo('<a href="tel://+15035678642">503-567-8642</a>');
+                header('Location: tel://+1-404-784-1081');
+                echo('<a href="tel://+14047841081">404-784-1081</a>');
                 $this->setResponse(309);
             }
 
