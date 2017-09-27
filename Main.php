@@ -1,6 +1,8 @@
 <?php
 
     namespace IdnoPlugins\CleverCustomize {
+    
+        use Idno\Core\Webservice;
 
         class Main extends \Idno\Common\Plugin {
 
@@ -13,9 +15,18 @@
                 \Idno\Core\site()->addPageHandler('/8675', '\IdnoPlugins\CleverCustomize\Pages\Jenny');
 
                 // override header
-                \Idno\Core\Idno::site()->template()->replaceTemplate('shell/toolbar/main','clevercustomize/toolbar');
+                // \Idno\Core\Idno::site()->template()->replaceTemplate('shell/toolbar/main','clevercustomize/toolbar');
             }
-        
+            
+            function registerEventHooks() {
+                // Hook into the "published" event to inform micro.blog that my feed has been updated 
+                \Idno\Core\site()->addEventHook('published', function (\Idno\Core\Event $event) {
+                    Webservice::post("https://micro.blog/ping", array(
+                        'url' => "https://cleverdevil.io/content/all/?_t=microblog"
+                    ));
+                });
+            }
+
         }
 
     }

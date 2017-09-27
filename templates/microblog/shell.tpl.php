@@ -91,7 +91,6 @@
                 $feedItem['content_html'] = "&#x21a9; " . $feedItem['title'];
                 unset($feedItem['content_text']);
             } else if ($item instanceof \IdnoPlugins\Status\Status) {
-                $feedItem['content_html'] = $feedItem['title'];
                 if ($item->inreplyto) {
                     $feedItem['content_html'] = "&#x21a9; " . $feedItem['title'];
                     $feedItem['external_url'] = $item->inreplyto;
@@ -107,7 +106,9 @@
             } else if ($item instanceof \IdnoPlugins\Recipe\Recipe) {
                 $feedItem['title'] = '&#x1F373; Recipe: <a href="' . $item->getUUID() . '">' . $item->getTitle() . '</a>';
             } else if ($item instanceof \IdnoPlugins\Review\Review) {
-                $feedItem['title'] = '&#x1F31F; Review: <a href="' . $item->getUUID() . '">' . $item->getTitle() . '</a>';
+                $stars = "";
+                for ($i = 0; $i < $item->getRating(); $i++) $stars .= "&#9733;";
+                $feedItem['title'] = '&#x1F914; Review: <a href="' . $item->getUUID() . '">' . $item->getTitle() . '</a> - ' . $stars;
             } else if ($item instanceof \IdnoPlugins\Watching\Watching) {
                 if ($item->getWatchType() == 'tv') {
                     $feedItem['title'] = '&#x1F4FA; Watched: <a href="' . $item->mediaURL . '">' . $item->title . '</a>';
