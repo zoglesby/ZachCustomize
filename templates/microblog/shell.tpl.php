@@ -77,7 +77,7 @@
             
             if ($item instanceof \IdnoPlugins\Like\Like) {
                 $feedItem['external_url'] = $item->getBody();
-                $feedItem['url'] = $item->getUUID();
+                $feedItem['url'] = $item->getURL();
                 unset($feedItem['content_text']);
                 if (!empty($item->repostof)) {
                     $feedItem['title'] = '&#x1F504; ' . $feedItem['title'];
