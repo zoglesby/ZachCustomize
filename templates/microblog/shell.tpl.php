@@ -115,6 +115,15 @@
                 } else if ($item->getWatchType() == 'movie') {
                     $feedItem['title'] = '&#x1F3AC; Watched: <a href="' . $item->mediaURL . '">' . $item->title . '</a>';
                 }
+            } else if ($item instanceof \IdnoPlugins\Event\RSVP) {
+                $feedItem['title'] = '&#128140; I have RSVP\'d "' . $item->rsvp . '" to <a href="' . $item->inreplyto . '">an event</a>. ' . $item->body; 
+                $feedItem['external_url'] = $item->inreplyto;
+                unset($feedItem['content_text']);
+                unset($feedItem['content_html']);
+            } else if ($item instanceof \IdnoPlugins\Event\Event) {
+                $feedItem['title'] = '&#128197; Event: <a href="' . $item->getURL() . '">' . $item->getTitle() . '</a>';
+                unset($feedItem['content_text']);
+                unset($feedItem['content_html']);
             } 
 
             if ($attachments = $item->getAttachments()) {
