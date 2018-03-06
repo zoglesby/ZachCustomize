@@ -59,6 +59,10 @@ for ($i = 0; $i < count($dates); $i++) {
     li.archive-month > a {
         color: #ccc;
     }
+    li.archive-day a {
+        width: 80px;
+        display: inline-block;
+    }
     li.archive-day.day-1  { background: #c0c0c0; }
     li.archive-day.day-2  { background: #c2c2c2; }
     li.archive-day.day-3  { background: #c4c4c4; }
