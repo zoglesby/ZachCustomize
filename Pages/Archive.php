@@ -13,7 +13,7 @@
         /**
          * Default class to serve the homepage
          */
-        class History extends \Idno\Common\Page
+        class Archive extends \Idno\Common\Page
         {
 
             // Handle GET requests to the homepage
@@ -102,7 +102,7 @@
                         'date'         => $start,
                         'description'  => $range,
                         'content'      => $friendly_types
-                    ))->draw('pages/history'),
+                    ))->draw('pages/archive'),
 
                 ))->drawPage();
             }

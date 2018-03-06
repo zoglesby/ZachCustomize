@@ -83,21 +83,33 @@
                     $feedItem['title'] = '&#x1F504; ' . $feedItem['title'];
                 } else if (!empty($item->likeof)) {
                     $feedItem['title'] = '&#x1F44D; ' . $feedItem['title'];
+                    continue;
                 } else {
                     $feedItem['title'] = '&#x1F516; ' . $feedItem['title'];     
                 }
             } else if ($item instanceof \IdnoPlugins\Status\Reply) {
-                $feedItem['external_url'] = $item->inreplyto;
-                $feedItem['content_html'] = "&#x21a9; " . $feedItem['title'];
-                unset($feedItem['content_text']);
+                if (strpos($item->inreplyto[0], "micro.blog") !== false) { 
+                    $mb_username = explode('/', $item->inreplyto[0])[3];
+                    $feedItem['content_html'] = '<a href="https://micro.blog/' . $mb_username . '">@' . $mb_username . '</a> ' . $item->getDescription();
+                    $feedItem['external_url'] = $item->inreplyto[0];
+                    unset($feedItem['content_text']);
+                } else {
+                    continue;
+                }
             } else if ($item instanceof \IdnoPlugins\Status\Status) {
                 if ($item->inreplyto) {
-                    $feedItem['content_html'] = "&#x21a9; " . $feedItem['title'];
-                    $feedItem['external_url'] = $item->inreplyto;
+                    if (strpos($item->inreplyto[0], "micro.blog") !== false) {
+                        $mb_username = explode('/', $item->inreplyto[0])[3];
+                        $feedItem['content_html'] = '<a href="https://micro.blog/' . $mb_username . '">@' . $mb_username . '</a> ' . $item->getDescription();
+                        $feedItem['external_url'] = $item->inreplyto[0];
+                    } else {
+                        continue;
+                    }
                 }    
                 unset($feedItem['content_text']);
                 unset($feedItem['title']);
             } else if ($item instanceof \IdnoPlugins\Checkin\Checkin) {
+                continue;
                 $feedItem['title'] = "&#x1F30E; " . $item->getTitle();
                 unset($feedItem['content_text']);
                 unset($feedItem['content_html']);
@@ -116,8 +128,8 @@
                     $feedItem['title'] = '&#x1F3AC; Watched: <a href="' . $item->mediaURL . '">' . $item->title . '</a>';
                 }
             } else if ($item instanceof \IdnoPlugins\Event\RSVP) {
-                $feedItem['title'] = '&#128140; I have RSVP\'d "' . $item->rsvp . '" to <a href="' . $item->inreplyto . '">an event</a>. ' . $item->body; 
-                $feedItem['external_url'] = $item->inreplyto;
+                $feedItem['title'] = '&#128140; I have RSVP\'d "' . $item->rsvp . '" to <a href="' . $item->inreplyto[0] . '">an event</a>. ' . $item->body; 
+                $feedItem['external_url'] = $item->inreplyto[0];
                 unset($feedItem['content_text']);
                 unset($feedItem['content_html']);
             } else if ($item instanceof \IdnoPlugins\Event\Event) {

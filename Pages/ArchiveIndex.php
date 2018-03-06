@@ -13,7 +13,7 @@
         /**
          * Default class to serve the homepage
          */
-        class HistoryIndex extends \Idno\Common\Page
+        class ArchiveIndex extends \Idno\Common\Page
         {
 
             // Handle GET requests to the homepage
@@ -63,7 +63,7 @@
                     'content'     => array('all'),
                     'body'        => $t->__(array(
                         'dates'   => $dates
-                    ))->draw('pages/historyindex'),
+                    ))->draw('pages/archiveindex'),
 
                 ))->drawPage();
             }
