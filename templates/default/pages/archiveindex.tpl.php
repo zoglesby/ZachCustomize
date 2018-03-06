@@ -19,6 +19,9 @@ for ($i = 0; $i < count($dates); $i++) {
 ?>
 
 <style type="text/css">
+    h1 {
+        margin-top: 1em;
+    }
     div.archive-index a {
         color: #333;
     }
@@ -41,7 +44,6 @@ for ($i = 0; $i < count($dates); $i++) {
 
     ul.archive-month {
         float: left;
-        width: 80px;
         list-style-type: none;
         padding: 0;
         margin: 0;
@@ -60,9 +62,48 @@ for ($i = 0; $i < count($dates); $i++) {
         color: #ccc;
     }
     li.archive-day a {
-        width: 80px;
         display: inline-block;
     }
+    
+    li.archive-day a {
+        width: 30px;
+    }
+    ul.archive-month {
+        width: 30px;
+    }
+    div.archive-index {
+        padding: 0 0 0 10px;
+    } 
+    @media (min-width: 768px) {
+        li.archive-day a {
+            width: 50px;
+        }
+        ul.archive-month {
+            width: 50px;
+        } 
+        div.archive-index {
+            padding: 0 0 0 40px;
+        } 
+    }
+    @media (min-width: 992px) {
+        li.archive-day a {
+            width: 60px;
+        }
+        ul.archive-month {
+            width: 60px;
+        } 
+    }
+    @media (min-width: 1200px) {
+        li.archive-day a {
+            width: 75px;
+        }
+        ul.archive-month {
+            width: 75px;
+        }
+    }
+
+
+
     li.archive-day.day-1  { background: #c0c0c0; }
     li.archive-day.day-2  { background: #c2c2c2; }
     li.archive-day.day-3  { background: #c4c4c4; }
