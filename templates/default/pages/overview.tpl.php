@@ -14,8 +14,7 @@
     
     /* content */
     div.overview-content {
-        width: 750px;
-        float: right;
+        margin-bottom: 15px;
     }    
     div.overview-content ul.picker {
         margin: 0;
@@ -67,7 +66,7 @@
 
     /* photos */
     div.overview-photos {
-        width: 370px;
+        width: 345px;
         background: white;
         margin: 0 20px 20px 0;
         padding: 15px;
@@ -76,8 +75,8 @@
 
     div.photo {
         float: left;
-        width: 100px;
-        height: 100px;
+        width: 93px;
+        height: 93px;
         margin: 0 0 10px 10px;
     }
 
@@ -88,7 +87,7 @@
     
     /* interactions */
     div.overview-interactions {
-        width: 370px;
+        width: 345px;
         background: white;
         margin: 0 20px 20px 0;
         padding: 15px;
@@ -99,7 +98,7 @@
 
     /* watched */
     div.overview-watched {
-        width: 370px;
+        width: 345px;
         background: white;
         margin: 0 20px 20px 0;
         padding: 15px;
@@ -110,7 +109,8 @@
         margin: 0 0 10px 10px;
     }
     div.watched img.poster {
-        max-height: 150px;
+        max-height: 134px;
+        max-width: 94px;
     }
     div.watched img.poster:hover {
         cursor: pointer;
@@ -119,10 +119,31 @@
 
     /* places */
     div.overview-checkins {
-        width: 370px;
+        width: 345px;
         background: white;
         margin: 0 20px 20px 0;
         padding: 15px;
+    }
+
+    @media (min-width: 768px) {
+        div.overview-content {
+            width: auto;
+            float: none;
+        }
+    }
+    @media (min-width: 992px) {
+        div.overview-content {
+            width: auto;
+            float: none;
+        }
+    }
+    @media (min-width: 1200px) {
+        div.overview-articles {
+        }
+        div.overview-content {
+            width: 780px;
+            float: right;
+        }
     }
 </style>
 
