@@ -225,15 +225,25 @@
         <?php
         $count = 0;
         foreach ($photos as $photo) {
-            if ($photo['thumbnail_small'] == null) {
+            $thumbs = [];
+            if ($photo['thumbnail_small'] != null) {
+                array_push($thumbs, $photo['thumbnail_small']);
+            } else if ($photo['thumbs_small'] != null) {
+                foreach ($photo['thumbs_small'] as $thumb) {
+                    array_push($thumbs, $thumb['url']);
+                }
+            } else {
                 continue;
             }
-            if (++$count == 25) break;
+
+            foreach ($thumbs as $thumb) {
+                if (++$count >= 25) break;
         ?>
-        <a href="<?= $photo->getURL() ?>">
-            <div class="photo" style="background-image:url(<?= $photo['thumbnail_small'] ?>); background-size: cover; background-position: 50%"></div>
-        </a>
+                <a href="<?= $photo->getURL() ?>">
+                    <div class="photo" style="background-image:url(<?= $thumb ?>); background-size: cover; background-position: 50%"></div>
+                </a>
         <?php
+            }
         }
         ?>
     </div>
