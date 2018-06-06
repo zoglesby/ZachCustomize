@@ -158,7 +158,6 @@
 
 <div class="overview">
     <div class="col-md-20 col-md-offset-0">
-    <h1><i class="fa fa-calendar"></i>Recently</h1>
     
     <!-- content -->
     <div class="overview-content">
@@ -203,7 +202,17 @@
                     ?>
                     <div class="reply">
                         <i class="fa fa-reply"></i>
+                        <?php
+                        if (is_array($status->inreplyto)) {
+                        ?>
+                        <a href="<?= $status->inreplyto[0] ?>"><?= $status->inreplyto[0] ?></a>
+                        <?php
+                        } else {
+                        ?>
                         <a href="<?= $status->inreplyto ?>"><?= $status->inreplyto ?></a>
+                        <?php
+                        }
+                        ?> 
                     </div>
                     <?php
                     }
@@ -221,7 +230,12 @@
 
     <!-- photos -->
     <div class="overview-photos">
-        <h2><i class="fa fa-photo"></i>Photos</h2>
+        <h2>
+            <i class="fa fa-photo"></i>Photos 
+            <a href="/photos" target="_blank" style="float: right">
+                <i class="fa fa-external-link"></i>
+            </a>
+        </h2>
         <?php
         $count = 0;
         foreach ($photos as $photo) {
