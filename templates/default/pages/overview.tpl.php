@@ -231,9 +231,9 @@
     <!-- photos -->
     <div class="overview-photos">
         <h2>
-            <i class="fa fa-photo"></i>Photos 
+            <i class="fa fa-camera-retro"></i>Photos 
             <a href="/photos" target="_blank" style="float: right">
-                <i class="fa fa-external-link"></i>
+                <i class="fa fa-external-link-alt"></i>
             </a>
         </h2>
         <?php
@@ -272,7 +272,7 @@
         
         if (!empty($interaction->likeof)) {
             $class = 'u-like-of';
-            $icon = '<i class="fa fa-star-o"></i>';
+            $icon = '<i class="fa fa-thumbs-up"></i>';
         } elseif (!empty($interaction->repostof)) {
             $class = 'u-repost-of';
             $icon = '<i class="fa fa-retweet"></i>';
