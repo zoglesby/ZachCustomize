@@ -13,6 +13,7 @@
     margin: 0;
     padding: 1em 0;
     text-align: center;
+    opacity: 0.85;
 }
 #current-status li {
     display: inline-block;
@@ -53,13 +54,13 @@
                     if (strlen($status['wifi']) > 0) {
                         $wifi_state = "wifi-connected";
                     }
-
-                    $motion_icon = "fa-male"; // stationary
+                    
+                    $motion_icon = "fa-couch"; // stationary
                     foreach ($status['motion'] as $value) {
                         if ($value == "driving") {
                             $motion_icon = "fa-car";
                         } else if ($value == "walking") {
-                            $motion_icon = "fa-male"; //"fa-shoe-prints";
+                            $motion_icon = "fa-shoe-prints";
                         } else if ($value == "running") {
                             $motion_icon = "fa-walking";
                         } else if ($value == "cycling") {

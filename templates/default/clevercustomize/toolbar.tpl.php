@@ -52,12 +52,12 @@ if ($_SERVER['REQUEST_URI'] != "/now") {
         $wifi_state = "wifi-connected";
     }
 
-    $motion_icon = "fa-male"; // stationary
+    $motion_icon = "fa-couch"; // stationary
     foreach ($status['motion'] as $value) {
         if ($value == "driving") {
             $motion_icon = "fa-car";
         } else if ($value == "walking") {
-            $motion_icon = "fa-male"; //"fa-shoe-prints";
+            $motion_icon = "fa-shoe-prints";
         } else if ($value == "running") {
             $motion_icon = "fa-walking";
         } else if ($value == "cycling") {
