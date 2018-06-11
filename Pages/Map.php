@@ -11,6 +11,8 @@
 
             function getContent()
             {
+                $this->adminGatekeeper(); // Admins only
+
                 $date_string = $this->getInput('date');
                 if ($date_string == null) {
                     $date_string = date('Y-m-d');
