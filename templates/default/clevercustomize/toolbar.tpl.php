@@ -25,6 +25,17 @@ if ($_SERVER['REQUEST_URI'] != "/now") {
     #location a {
         color: #000;
     }
+
+    div.🕸💍 {
+        position: fixed;
+        bottom: 1em;
+        left: 1em;
+        padding: 1em;
+        background: white;
+        opacity: 0.85;
+        text-align: center;
+        z-index: 10000;
+    }
 </style>
 
 <div id="current-status" onclick="window.location.href='/now'">
@@ -74,6 +85,12 @@ if ($_SERVER['REQUEST_URI'] != "/now") {
 <?php
 }
 ?>
+
+<div class="🕸💍">
+  <a href="https://🕸💍.ws/📏/previous">👈🏼</a>
+  <a href="https://🕸💍.ws/">🕸💍</a>
+  <a href="https://🕸💍.ws/📏/next">👉🏼</a>
+</div>
 
 <?php
 
