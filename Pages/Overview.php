@@ -32,7 +32,8 @@
 
                 /* find recent likes, reposts, and bookmarks */
                 $interactions = \Idno\Common\Entity::getFromX(array(
-                    'IdnoPlugins\Like\Like'
+                    'IdnoPlugins\Like\Like',
+                    'IdnoPlugins\GitHub\GitHub'
                 ), $search, array(), 20);
 
                 /* find recent watched shows and movies */

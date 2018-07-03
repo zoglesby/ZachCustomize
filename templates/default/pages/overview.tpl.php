@@ -269,8 +269,12 @@
     foreach ($interactions as $interaction) {
         $class = '';
         $icon = '';
-        
-        if (!empty($interaction->likeof)) {
+        $link = $interaction->body;
+
+        if (!empty($interaction->targetURL)) {
+            $icon = '<i class="fab fa-github"></i>';
+            $link = $interaction->targetURL;
+        } elseif (!empty($interaction->likeof)) {
             $class = 'u-like-of';
             $icon = '<i class="fa fa-thumbs-up"></i>';
         } elseif (!empty($interaction->repostof)) {
@@ -284,11 +288,13 @@
         $body = $interaction->body;
         if (!empty($interaction->pageTitle)) {
             $body = $interaction->pageTitle;
+        } elseif (!empty($interaction->title)) {
+            $body = $interaction->title;
         }
     ?>
         <div class="interaction">
             <?= $icon ?>
-            <a href="<?= $interaction->body ?>" class="<?= $class ?> p-name" target="_blank">
+            <a href="<?= $link ?>" class="<?= $class ?> p-name" target="_blank">
                 <?= htmlentities(strip_tags($body)) ?>
             </a>
         </div>
