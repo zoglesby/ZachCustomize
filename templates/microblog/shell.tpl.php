@@ -87,6 +87,8 @@
                 } else {
                     $feedItem['title'] = '&#x1F516; ' . $feedItem['title'];     
                 }
+            } else if ($item instanceof \IdnoPlugins\GitHub\GitHub) {
+                continue;
             } else if ($item instanceof \IdnoPlugins\Status\Reply) {
                 if (strpos($item->inreplyto[0], "micro.blog") !== false) { 
                     $mb_username = explode('/', $item->inreplyto[0])[3];

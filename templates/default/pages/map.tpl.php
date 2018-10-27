@@ -1,98 +1,6 @@
 <!DOCTYPE html>
 <script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script>
 
-<style>
-#map {
-    margin: 0 auto 1em auto;
-    height: 600px; 
-}
-#map-nav {
-    background: white;
-    opacity: 0.85;
-    overflow: hidden;
-    text-align: center;
-}
-#map-nav h1 {
-    margin: 0.5em 0 0.5em 0;
-}
-.left { 
-    float: left;
-    font-size: 3em;
-    margin: 0.5em 0 0.5em 1em;
-}
-.right { 
-    float: right;
-    font-size: 3em;
-    margin: 0.5em 1em 0.5em 0;
-}
-.point {
-    width: 250px;
-    padding: 7px 0 0 0;
-    background: rgba(247, 247, 247, 0.75);
-    border-radius: 5px;
-    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.29);
-    font-family: Helvetica, Arial, sans-serif !important;
-    -webkit-transform-origin: 0 10px;
-    transform-origin: 0 10px;
-}
-
-.point h1 {
-    margin-top: 0;
-    padding: 5px 15px;
-    background: #2aaef5;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 16px !important;
-    font-family: Helvetica, Arial, sans-serif !important;
-    font-weight: 300;
-}
-
-.point section {
-    padding: 0 15px 5px;
-    font-size: 14px;
-}
-
-.point section p {
-    margin: 5px 0;
-}
-
-.point:after {
-    content: "";
-    position: absolute;
-    top: 7px;
-    left: -13px;
-    width: 0;
-    height: 0;
-    margin-bottom: -13px;
-    border-right: 13px solid #2aaef5;
-    border-top: 13px solid rgba(0, 0, 0, 0);
-    border-bottom: 13px solid rgba(0, 0, 0, 0);
-}
-
-@-webkit-keyframes scale-and-fadein {
-    0% {
-        -webkit-transform: scale(0.2);
-        opacity: 0;
-    }
-
-    100% {
-        -webkit-transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes scale-and-fadein {
-    0% {
-        transform: scale(0.2);
-        opacity: 0;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-</style>
-
 <div class="row page-map">
     <div class="col-md-10 col-md-offset-1">
         <div>
@@ -177,7 +85,7 @@
                     );
                     coordinates.push(coordinate);
                     
-                    if ((i % 50) == 0) {
+                    if ((i % 20) == 0) {
                         var annotation = new mapkit.MarkerAnnotation(coordinate, {
                             callout: pointAnnotationCallout
                         });

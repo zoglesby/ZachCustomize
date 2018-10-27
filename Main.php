@@ -22,6 +22,10 @@
 
                 // override header
                 \Idno\Core\Idno::site()->template()->replaceTemplate('shell/toolbar/main','clevercustomize/toolbar');
+                
+                // add in my CSS / JavaScript includes via a template extend
+                \Idno\Core\Idno::site()->template()->extendTemplate('shell/head', 'clevercustomize/shell/head');
+                \Idno\Core\Idno::site()->template()->extendTemplate('shell/footer', 'clevercustomize/shell/footer');
             }
             
             function registerEventHooks() {

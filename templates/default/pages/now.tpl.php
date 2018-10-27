@@ -1,40 +1,11 @@
 <!DOCTYPE html>
 <script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script>
 
-<style>
-#map {
-    margin: 0 auto 1em auto;
-    height: 600px; 
-}
-
-#current-status {
-    background: white;
-    list-style-type: none;
-    margin: 0;
-    padding: 1em 0;
-    text-align: center;
-    opacity: 0.85;
-}
-#current-status li {
-    display: inline-block;
-    font-size: 36px;
-    margin-right: 1em;
-}
-
-.charging, .full {
-    color: #2ADD00;
-}
-
-.wifi-disconnected {
-    color: #bbb;
-}
-</style>
-
 <div class="row page-now">
     <div class="col-md-10 col-md-offset-1">
         <div>
             <div class="row">
-                <ul id="current-status">
+                <ul id="current-status-now">
                 <?php
                     $battery_icon = "fa-battery-full";
                     if ($status['battery_level'] <= 0.75) {
