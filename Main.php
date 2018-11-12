@@ -19,6 +19,7 @@
                 \Idno\Core\site()->addPageHandler('/overview', '\IdnoPlugins\CleverCustomize\Pages\Overview');
                 \Idno\Core\site()->addPageHandler('/now', '\IdnoPlugins\CleverCustomize\Pages\Now');
                 \Idno\Core\site()->addPageHandler('/map', '\IdnoPlugins\CleverCustomize\Pages\Map');
+                \Idno\Core\site()->addPageHandler('/nicknames', '\IdnoPlugins\CleverCustomize\Pages\Nicknames');
 
                 // override header
                 \Idno\Core\Idno::site()->template()->replaceTemplate('shell/toolbar/main','clevercustomize/toolbar');
