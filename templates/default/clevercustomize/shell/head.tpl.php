@@ -12,3 +12,5 @@
 
 <link rel="stylesheet" href="<?=\Idno\Core\site()->config()->url;?>IdnoPlugins/CleverCustomize/css/custom.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="<?=\Idno\Core\site()->config()->url;?>IdnoPlugins/CleverCustomize/css/dark.css" type="text/css" media="screen" />
+
+<script src="<?=\Idno\Core\site()->config()->url;?>IdnoPlugins/CleverCustomize/js/custom.js"></script>
