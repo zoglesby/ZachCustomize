@@ -339,7 +339,7 @@ if (array_key_exists("Status updates", $entities)) {
             <?php
             if (!empty($status->inreplyto)) {
             ?>
-            <div class="reply">
+            <div>
                 <i class="fa fa-reply"></i>
                 <?php
                 if (is_array($status->inreplyto)) {
@@ -356,9 +356,9 @@ if (array_key_exists("Status updates", $entities)) {
             <?php
             }
             ?>
-            <div class="content"><?= $icon ?><?= $status->getBody() ?></div>
-            <a class="u-url url" href="<?= $status->getURL() ?>">
-                <time class="dt-published" datetime="<?= date(DATE_ISO8601, $status->created) ?>"><?= strftime('%d %b %Y', $status->created) ?></time>
+            <div><?= $icon ?><?= $status->getBody() ?></div>
+            <a href="<?= $status->getURL() ?>">
+                <time datetime="<?= date(DATE_ISO8601, $status->created) ?>"><?= strftime('%d %b %Y', $status->created) ?></time>
             </a>
         </div>
         <?php
@@ -381,7 +381,6 @@ if (array_key_exists("Bookmarked pages", $entities)) {
         <summary><?= count($entities["Bookmarked pages"]) ?> likes, reposts, and bookmarks</summary>
         <?php
         foreach ($entities["Bookmarked pages"] as $interaction) {
-            $class = '';
             $icon = '';
             $link = $interaction->body;
 
@@ -389,13 +388,10 @@ if (array_key_exists("Bookmarked pages", $entities)) {
                 $icon = '<i class="fab fa-github"></i>';
                 $link = $interaction->targetURL;
             } elseif (!empty($interaction->likeof)) {
-                $class = 'u-like-of';
                 $icon = '<i class="fa fa-thumbs-up"></i>';
             } elseif (!empty($interaction->repostof)) {
-                $class = 'u-repost-of';
                 $icon = '<i class="fa fa-retweet"></i>';
             } else {
-                $class = 'u-bookmark-of';
                 $icon = '<i class="fa fa-bookmark"></i>';
             }
 
@@ -408,7 +404,7 @@ if (array_key_exists("Bookmarked pages", $entities)) {
         ?>
             <div class="interaction">
                 <?= $icon ?>
-                <a href="<?= $link ?>" class="<?= $class ?> p-name" target="_blank">
+                <a href="<?= $link ?>" target="_blank">
                     <?= htmlentities(strip_tags($body)) ?>
                 </a>
             </div>
