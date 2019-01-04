@@ -35,7 +35,7 @@ for ($i = 0; $i < count($dates); $i++) {
                              ?>    
                                     <ul class="archive-month">
                                         <li class="archive-month">
-                                            <a href="https://cleverdevil.io/archive/<?=$year?>/<?=$month?>">
+                                            <a href="https://cleverdevil.io/summary/<?=$year?>/<?=$month?>">
                                                 <?= date('M', strtotime($year . '-' . $month . '-01')) ?>
                                             </a>
                                         </li>
