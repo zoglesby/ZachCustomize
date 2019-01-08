@@ -407,7 +407,7 @@ li.archive-day.day-31 { background: #fcfcfc; }
  */
 .page-now #map {
     margin: 0 auto 1em auto;
-    height: 600px; 
+    height: 500px; 
 }
 
 .page-now #current-status-now {

@@ -124,6 +124,7 @@
                 for ($i = 0; $i < $item->getRating(); $i++) $stars .= "&#9733;";
                 $feedItem['title'] = '&#x1F914; Review: <a href="' . $item->getUUID() . '">' . $item->getTitle() . '</a> - ' . $stars;
             } else if ($item instanceof \IdnoPlugins\Watching\Watching) {
+                continue;
                 if ($item->getWatchType() == 'tv') {
                     $feedItem['title'] = '&#x1F4FA; Watched: <a href="' . $item->mediaURL . '">' . $item->title . '</a>';
                 } else if ($item->getWatchType() == 'movie') {

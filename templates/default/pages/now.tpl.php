@@ -5,6 +5,10 @@
     <div class="col-md-10 col-md-offset-1">
         <div>
             <div class="row">
+                <div style="text-align: center">
+                    <a target="_blank" href="https://trakt.tv/users/cleverdevil"><img width="500" height="40" alt="cleverdevil" src="https://widgets.trakt.tv/users/8f26448c4265bd6077447ba88d84cc75/watched/thin@2x.jpg" style="margin: 0 auto 2em auto"/></a>                
+                </div>
+
                 <ul id="current-status-now">
                 <?php
                     $battery_icon = "fa-battery-full";
