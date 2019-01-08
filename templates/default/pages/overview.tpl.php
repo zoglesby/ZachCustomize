@@ -162,7 +162,7 @@
             $poster = '';
             if ($attachments = $watch->getAttachments()) {
                 foreach ($attachments as $attachment) {
-                    $poster = '<img src="' . $attachment['url'] . '" class="poster">';
+                    $poster = '<img src="' . $attachment['url'] . '" class="poster" alt="' . $watch->getTitle()  . '" title="' . $watch->getTitle() . '">';
                     break;
                 }
             }

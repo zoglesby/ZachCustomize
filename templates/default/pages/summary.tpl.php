@@ -1,104 +1,3 @@
-<style type="text/css">
-    #summary h1 {
-        font-size: 3.0em !important;
-        margin: 1em 0 0.75em 0;
-    }
-
-    #summary h2 {
-        font-size: 1.75em !important;
-        margin: 1em 0 0.75em 0;
-    }
-
-    #summary {
-        background: white;
-        padding: 2em 3em 4em 3em;
-        overflow: hidden;
-        text-align: center;
-    }
-    
-    #summary-container {
-        text-align: left;
-        margin: 0 auto;
-    }
-
-    @media (min-width: 992px) {
-        #summary {
-            margin-left: 1em;
-        }
-    }
-
-    #summary section {
-        margin: 1em 0 0 0;
-        clear: both;
-    }
-
-    #content-types {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
-
-    #content-types li {
-        float: left;
-        padding: 0.5em 1em;
-        margin: 0 1em 1em 0;
-        background: #ddd;
-    }
-    
-    #posts ul, #recipes ul, #rsvps ul, #reviews ul {
-        padding: 0 0 0 1em;
-    }    
-
-    #photos {
-        overflow: hidden;
-        clear: both;
-    }
-    #photos .photo {
-        float: left;
-        margin: 0 1em 1em 0;
-        width: 100px;
-        height: 100px; 
-    }
-    
-    #photos .photo:hover {
-        cursor: pointer;
-        opacity: 0.75;
-    }
-
-
-    #map {
-        height: 400px;
-    }
-    
-    #watching {
-        overflow: hidden;
-    }
-    #watching .watched {
-        float: left;
-        margin: 0 1em 1em 0;
-        width: 100px;
-        height: 150px;
-    }
-
-    
-    #interactions .interaction {
-        width: 98%;
-        height: 2em;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    
-    #statuses .status {
-        background: #eee;
-        margin: 0.5em 0;
-        padding: 0.5em 1em;
-    }
-</style>
-
-
 <div id="summary">
 <div id="summary-container" class="col-md-20 col-md-offset-0">
 
@@ -303,7 +202,7 @@ if (array_key_exists("Watching", $entities)) {
         $poster = '';
         if ($attachments = $watch->getAttachments()) {
             foreach ($attachments as $attachment) {
-                $poster = '<img src="' . $attachment['url'] . '" class="poster">';
+                $poster = '<img src="' . $attachment['url'] . '" class="poster" alt="' . $watch->getTitle()  . '" title="' . $watch->getTitle() . '">';
                 break;
             }
         }

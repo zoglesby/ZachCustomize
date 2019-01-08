@@ -618,3 +618,110 @@ li.archive-day.day-31 { background: #fcfcfc; }
   }
 }
 
+
+/**
+ * Summary pages
+ */
+
+#summary h1 {
+    font-size: 3.0em !important;
+    margin: 1em 0 0.75em 0;
+}
+
+#summary h2 {
+    font-size: 1.75em !important;
+    margin: 1em 0 0.75em 0;
+}
+
+#summary {
+    background: white;
+    padding: 2em 3em 4em 3em;
+    overflow: hidden;
+    text-align: center;
+}
+
+#summary-container {
+    text-align: left;
+    margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+    #summary {
+        margin-left: 1em;
+    }
+}
+
+#summary section {
+    margin: 1em 0 0 0;
+    clear: both;
+}
+
+#summary #content-types {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#summary #content-types li {
+    float: left;
+    padding: 0.5em 1em;
+    margin: 0 1em 1em 0;
+    background: #ddd;
+}
+
+#summary #posts ul, #summary #recipes ul, #summary #rsvps ul, #summary #reviews ul {
+    padding: 0 0 0 1em;
+}    
+
+#summary #photos {
+    overflow: hidden;
+    clear: both;
+}
+#summary #photos .photo {
+    float: left;
+    margin: 0 1em 1em 0;
+    width: 100px;
+    height: 100px; 
+}
+
+#summary #photos .photo:hover {
+    cursor: pointer;
+    opacity: 0.75;
+}
+
+
+#summary #map {
+    height: 400px;
+}
+
+#summary #watching {
+    overflow: hidden;
+}
+#summary #watching .watched {
+    float: left;
+    margin: 0 1em 1em 0;
+    width: 100px;
+    height: 150px;
+}
+#summary #watching .watched:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+
+#summary #interactions .interaction {
+    width: 98%;
+    height: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+#summary #statuses .status {
+    background: #eee;
+    margin: 0.5em 0;
+    padding: 0.5em 1em;
+}
+
