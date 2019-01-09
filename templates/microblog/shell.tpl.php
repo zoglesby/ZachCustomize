@@ -139,6 +139,8 @@
                 $feedItem['title'] = '&#128197; Event: <a href="' . $item->getURL() . '">' . $item->getTitle() . '</a>';
                 unset($feedItem['content_text']);
                 unset($feedItem['content_html']);
+            } else if ($item instanceof \IdnoPlugins\Listen\Listen) {
+                continue;
             } 
 
             if ($attachments = $item->getAttachments()) {

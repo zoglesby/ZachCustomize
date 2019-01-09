@@ -568,23 +568,23 @@ li.archive-day.day-31 { background: #fcfcfc; }
   margin: 0 0 10px 0;
 }
 
-/* watched */
-.overview div.overview-watched {
+/* watched and listened */
+.overview div.overview-watched, .overview div.overview-listened {
   width: 345px;
   background: white;
   margin: 0 20px 20px 0;
   padding: 15px;
   overflow: hidden;
 }
-.overview div.watched {
+.overview div.watched, .overview div.listened {
   float: left;
   margin: 0 0 10px 10px;
 }
-.overview div.watched img.poster {
+.overview div.watched img.poster, .overview div.listened img.poster {
   max-height: 134px;
   max-width: 94px;
 }
-.overview div.watched img.poster:hover {
+.overview div.watched img.poster:hover, .overview div.listened img.poster:hover {
   cursor: pointer;
   opacity: 0.75;
 }
@@ -708,6 +708,22 @@ li.archive-day.day-31 { background: #fcfcfc; }
   cursor: pointer;
   opacity: 0.7;
 }
+
+#summary #listening {
+    overflow: hidden;
+}
+#summary #listening .listened {
+    float: left;
+    margin: 0 1em 1em 0;
+    max-width: 150px;
+    max-height: 150px;
+}
+#summary #listening .listened:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+
 
 
 #summary #interactions .interaction {

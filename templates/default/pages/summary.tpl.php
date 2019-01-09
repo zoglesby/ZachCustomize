@@ -221,6 +221,37 @@ if (array_key_exists("Watching", $entities)) {
 ?>
 
 
+<!-- listened -->
+<?php
+if (array_key_exists("Listen", $entities)) {
+?>
+<section id="listening">
+    <h2><?= $typemap["Listen"] ?>Listened</h2>
+    <?php
+    foreach ($entities["Listen"] as $listen) {
+        $poster = '';
+        if ($attachments = $listen->getAttachments()) {
+            foreach ($attachments as $attachment) {
+                $poster = '<img src="' . $attachment['url'] . '" class="poster" alt="' . $listen->getTitle()  . '" title="' . $listen->getTitle() . '">';
+                break;
+            }
+        }
+    ?>
+        <div class="listened">
+            <a href="<?= $listen->getURL() ?>">
+                <?= $poster ?>
+            </a>
+        </div>
+    <?php
+    }
+    ?>
+</section>
+<?php
+}
+?>
+
+
+
 
 <!-- status updates -->
 <?php

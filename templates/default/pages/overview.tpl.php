@@ -177,6 +177,29 @@
         ?>
     </div>
 
+    <!-- listened -->
+    <div class="overview-listened">
+        <h2><i class="fa fa-volume-up"></i>Listened</h2>
+        <?php
+        foreach ($listened as $listen) {
+            $poster = '';
+            if ($attachments = $listen->getAttachments()) {
+                foreach ($attachments as $attachment) {
+                    $poster = '<img src="' . $attachment['url'] . '" class="poster" alt="' . $listen->getTitle()  . '" title="' . $listen->getTitle() . '">';
+                    break;
+                }
+            }
+        ?>
+            <div class="listened">
+                <a href="<?= $listen->getURL() ?>">
+                    <?= $poster ?>
+                </a>
+            </div>
+        <?php
+        }
+        ?>
+    </div>
+
     <!-- checkins -->
     <div class="overview-checkins">
         <h2><i class="fa fa-map-pin"></i>Places</h2>

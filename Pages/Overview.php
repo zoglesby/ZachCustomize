@@ -40,6 +40,11 @@
                 $watched = \Idno\Common\Entity::getFromX(array(
                     'IdnoPlugins\Watching\Watching'
                 ), $search, array(), 15);
+                
+                /* find recently listened to content */
+                $listened = \Idno\Common\Entity::getFromX(array(
+                    'IdnoPlugins\Listen\Listen'
+                ), $search, array(), 15);
 
                 /* find recent checkins */
                 $checkins = \Idno\Common\Entity::getFromX(array(
@@ -67,6 +72,7 @@
                         'photos'        => $photos,
                         'interactions'  => $interactions,
                         'watched'       => $watched,
+                        'listened'      => $listened,
                         'checkins'      => $checkins,
                         'statuses'      => $statuses,
                         'posts'         => $posts
