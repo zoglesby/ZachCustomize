@@ -26,6 +26,7 @@
 
                 // override header
                 \Idno\Core\Idno::site()->template()->replaceTemplate('shell/toolbar/main','clevercustomize/toolbar');
+                \Idno\Core\Idno::site()->template()->extendTemplate('entity/feed','clevercustomize/summaries');
                 
                 // add in my CSS / JavaScript includes via a template extend
                 \Idno\Core\Idno::site()->template()->extendTemplate('shell/head', 'clevercustomize/shell/head');

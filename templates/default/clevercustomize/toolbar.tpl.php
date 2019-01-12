@@ -2,6 +2,7 @@
 if ($_SERVER['REQUEST_URI'] != "/now") {
 ?>
 
+
 <div id="current-status" onclick="window.location.href='/now'">
 <?php
     $status_file = fopen("current.json", "r");

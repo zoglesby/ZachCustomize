@@ -741,3 +741,22 @@ li.archive-day.day-31 { background: #fcfcfc; }
     padding: 0.5em 1em;
 }
 
+/**
+ * Summaries on the homne page
+ */
+#summaries {
+    list-style-type: none;
+    margin: 1em auto; 
+    padding: 0 0 0 2em;
+    overflow: hidden;
+    max-width: 900px;
+}
+
+#summaries li {
+    float: left;
+    background: white;
+    margin: 0 1em 1em 0;
+    padding: 0.5em 1em;
+    width: 9em;
+}
+<
