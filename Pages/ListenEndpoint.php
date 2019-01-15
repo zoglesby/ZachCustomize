@@ -22,15 +22,14 @@
                 $this->setInput('listenType', $json->type);
                 $this->setInput('listenAuthor', $json->author);
                 $this->setInput('mediaURL', $json->link);
-                $this->setInput('created', strtotime($json->listenDateTime));
+                $this->setInput('created', $json->listenDateTime);
                 
                 $contentType = new \IdnoPlugins\Listen\ContentType();
                 
                 $entity = $contentType->createEntity();
                 $entity->setOwner('http://cleverdevil.io/profile/cleverdevil');
-                $entity->created = strtotime($json->listenDateTime); 
-
                 $result = $entity->saveDataFromInput();
+                
                 if ($result) {
                     \Idno\Core\Idno::site()->triggerEvent('listen/post/success', ['page' => $this, 'object' => $entity]);
                     $this->setResponse(201);

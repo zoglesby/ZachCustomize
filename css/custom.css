@@ -742,12 +742,12 @@ li.archive-day.day-31 { background: #fcfcfc; }
 }
 
 /**
- * Summaries on the homne page
+ * Summaries on feed pages 
  */
 #summaries {
     list-style-type: none;
     margin: 1em auto; 
-    padding: 0 0 0 2em;
+    padding: 0 0 0 3em;
     overflow: hidden;
     max-width: 900px;
 }
