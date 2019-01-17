@@ -70,7 +70,7 @@
                         $ann = $obj->addAnnotation(
                             'reply', 'Dark Sky', 'https://darksky.net/', 
                             $icon_url, $weather_content, null, null, null,
-                            $weather, false
+                            ["weather" => $weather], false
                         );
                     }
                 });
