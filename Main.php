@@ -19,7 +19,7 @@
                 \Idno\Core\site()->addPageHandler('/overview', '\IdnoPlugins\CleverCustomize\Pages\Overview');
                 \Idno\Core\site()->addPageHandler('/now', '\IdnoPlugins\CleverCustomize\Pages\Now');
                 \Idno\Core\site()->addPageHandler('/map', '\IdnoPlugins\CleverCustomize\Pages\Map');
-                \Idno\Core\site()->addPageHandler('/nicknames', '\IdnoPlugins\CleverCustomize\Pages\Nicknames');
+                //\Idno\Core\site()->addPageHandler('/nicknames', '\IdnoPlugins\CleverCustomize\Pages\Nicknames');
                 \Idno\Core\site()->addPageHandler('/summary/([0-9]+)/([0-9]+)/([0-9]+)/?', '\IdnoPlugins\CleverCustomize\Pages\Summary');
                 \Idno\Core\site()->addPageHandler('/summary/([0-9]+)/([0-9]+)/?', '\IdnoPlugins\CleverCustomize\Pages\Summary');
                 \Idno\Core\site()->addPageHandler('/listen/hook/', '\IdnoPlugins\CleverCustomize\Pages\ListenEndpoint', true);
@@ -36,9 +36,43 @@
             function registerEventHooks() {
                 // Hook into the "published" event to inform micro.blog that my feed has been updated 
                 \Idno\Core\site()->addEventHook('published', function (\Idno\Core\Event $event) {
+                    // Notify Micro.blog of an update
                     Webservice::post("https://micro.blog/ping", array(
                         'url' => "https://cleverdevil.io/content/all/?_t=microblog"
                     ));
+
+                    // Look up current weather conditions and add as an annotation based upon my
+                    // current location.
+                    $status_file = fopen("current.json", "r");
+                    $raw_json = fgets($status_file);
+                    $status = json_decode($raw_json, true);
+                    
+                    $darksky_api_key = \Idno\Core\Idno::site()->config()->darksky_api_key;
+                    
+                    $weather_url = "https://api.darksky.net/forecast/" . $darksky_api_key . "/";
+                    $weather_url .= $status['y'] . "," . $status['x'];
+                    
+                    $response = Webservice::get($weather_url);
+                    if ($response['response'] == 200) {
+                        $weather = json_decode($response['content']);
+
+                        $obj = $event->data()['object'];
+                        
+                        $icon_url = \Idno\Core\site()->config()->url;
+                        $icon_url .= "IdnoPlugins/CleverCustomize/images/weather/";
+                        $icon_url .= $weather->currently->icon . ".svg";
+
+                        $weather_content = 'Weather at time/location of posting &mdash; ';
+                        $weather_content .= $weather->currently->summary . ' with a temperature of ';
+                        $weather_content .= $weather->currently->temperature . '&deg;F and ';
+                        $weather_content .= ($weather->currently->humidity * 100) . '% humidity.';
+
+                        $ann = $obj->addAnnotation(
+                            'reply', 'Dark Sky', 'https://darksky.net/', 
+                            $icon_url, $weather_content, null, null, null,
+                            $weather, false
+                        );
+                    }
                 });
                 
                 // Hook into the "publish" (pre-publish) event to potentially implement better
