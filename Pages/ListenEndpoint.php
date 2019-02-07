@@ -29,6 +29,7 @@
                 $entity = $contentType->createEntity();
                 $entity->setOwner('http://cleverdevil.io/profile/cleverdevil');
                 $result = $entity->saveDataFromInput();
+                $entity->publish();
                 
                 if ($result) {
                     \Idno\Core\Idno::site()->triggerEvent('listen/post/success', ['page' => $this, 'object' => $entity]);
