@@ -19,7 +19,7 @@
                 \Idno\Core\site()->addPageHandler('/overview', '\IdnoPlugins\CleverCustomize\Pages\Overview');
                 \Idno\Core\site()->addPageHandler('/now', '\IdnoPlugins\CleverCustomize\Pages\Now');
                 \Idno\Core\site()->addPageHandler('/map', '\IdnoPlugins\CleverCustomize\Pages\Map');
-                //\Idno\Core\site()->addPageHandler('/nicknames', '\IdnoPlugins\CleverCustomize\Pages\Nicknames');
+                \Idno\Core\site()->addPageHandler('/nicknames', '\IdnoPlugins\CleverCustomize\Pages\Nicknames');
                 \Idno\Core\site()->addPageHandler('/summary/([0-9]+)/([0-9]+)/([0-9]+)/?', '\IdnoPlugins\CleverCustomize\Pages\Summary');
                 \Idno\Core\site()->addPageHandler('/summary/([0-9]+)/([0-9]+)/?', '\IdnoPlugins\CleverCustomize\Pages\Summary');
                 \Idno\Core\site()->addPageHandler('/listen/hook/', '\IdnoPlugins\CleverCustomize\Pages\ListenEndpoint', true);
@@ -27,7 +27,8 @@
                 // override header
                 \Idno\Core\Idno::site()->template()->replaceTemplate('shell/toolbar/main','clevercustomize/toolbar');
                 \Idno\Core\Idno::site()->template()->extendTemplate('entity/feed','clevercustomize/summaries');
-                
+                \Idno\Core\Idno::site()->template()->extendTemplate('entity/annotations/comment/main', 'clevercustomize/location', true);
+
                 // add in my CSS / JavaScript includes via a template extend
                 \Idno\Core\Idno::site()->template()->extendTemplate('shell/head', 'clevercustomize/shell/head');
                 \Idno\Core\Idno::site()->template()->extendTemplate('shell/footer', 'clevercustomize/shell/footer');
@@ -36,17 +37,24 @@
             function registerEventHooks() {
                 // Hook into the "published" event to inform micro.blog that my feed has been updated 
                 \Idno\Core\site()->addEventHook('published', function (\Idno\Core\Event $event) {
+                    $obj = $event->data()['object'];
+                    
                     // Notify Micro.blog of an update
                     Webservice::post("https://micro.blog/ping", array(
                         'url' => "https://cleverdevil.io/content/all/?_t=microblog"
                     ));
 
-                    // Look up current weather conditions and add as an annotation based upon my
-                    // current location.
                     $status_file = fopen("current.json", "r");
                     $raw_json = fgets($status_file);
                     $status = json_decode($raw_json, true);
                     
+                    $ann = $obj->addAnnotation(
+                        'location-metadata', 'cleverdevil.io', 'https://cleverdevil.io/', 
+                        null, '', null, null, null, ["location" => $status], false
+                    );
+                    
+                    // Look up current weather conditions and add as an annotation based upon my
+                    // current location.
                     $darksky_api_key = \Idno\Core\Idno::site()->config()->darksky_api_key;
                     
                     $weather_url = "https://api.darksky.net/forecast/" . $darksky_api_key . "/";
@@ -56,8 +64,6 @@
                     if ($response['response'] == 200) {
                         $weather = json_decode($response['content']);
 
-                        $obj = $event->data()['object'];
-                        
                         $icon_url = \Idno\Core\site()->config()->url;
                         $icon_url .= "IdnoPlugins/CleverCustomize/images/weather/";
                         $icon_url .= $weather->currently->icon . ".svg";
@@ -70,7 +76,8 @@
                         $ann = $obj->addAnnotation(
                             'reply', 'Dark Sky', 'https://darksky.net/', 
                             $icon_url, $weather_content, null, null, null,
-                            ["weather" => $weather], false
+                            ["weather" => $weather ],
+                            false
                         );
                     }
                 });
