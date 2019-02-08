@@ -5,7 +5,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .idno-content, .page-pages .page-body, .archive-index {
+  .idno-content, .page-pages .page-body, .archive-index, #summary {
     background-color: rgba(0,0,0,0.8) !important;
     color: #eee !important;
   }
@@ -77,7 +77,7 @@
     color: #eee !important;
   }
 
-  .overview-microblog div.status {
+  .overview-microblog div.status, #summary div.status {
     background-color: rgba(32,32,32,0.8) !important;
     color: #eee !important;
   }
@@ -124,6 +124,17 @@
   /* 🕸💍 */
   div.🕸💍 {
     background-color: rgba(0,0,0,0.8) !important;
+    color: #eee !important;
+  }
+
+  /* summaries */
+  #summaries li {
+    background-color: rgba(0,0,0,0.8) !important;
+    color: #eee !important;
+  }
+
+  #summary #content-types li {
+    background-color: rgba(50,50,50,0.8) !important;
     color: #eee !important;
   }
 }
