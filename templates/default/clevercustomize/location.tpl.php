@@ -9,9 +9,9 @@
 ?>
         <div id="location-annotation" style="margin: 1em 0 2em 0">
             <b>Jonathan's Location at Posting</b> <small>(click the marker to see more)</small>
-            <div id="location-annotation-map" style="width: 100%; height: 250px; border: 1px solid #666"></div>
+            <div id="location-annotation-map-<?= $object->_id ?>" style="width: 100%; height: 250px; border: 1px solid #666"></div>
             <script>
-            var map = L.map('location-annotation-map', {
+            var map = L.map('location-annotation-map-<?= $object->_id ?>', {
                 touchZoom: false,
                 scrollWheelZoom: false
             }).setView([<?= $location_meta['y'] ?>, <?= $location_meta['x'] ?>], 16);
