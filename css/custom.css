@@ -231,6 +231,7 @@ ul.archive-month {
 }
 ul.archive-month li {
   margin: 1px 1px 0 0;
+  transition: all 200ms ease-in-out;
 }
 div.archive-index li:hover {
   background: #357ebd;
@@ -455,6 +456,7 @@ li.archive-day.day-31 { background: #fcfcfc; }
   color: white;
   padding-top: 0.66em;
   margin-bottom: -2em; 
+  transition: all 200ms ease-in-out;
 }
 #on-this-day-message a:hover {
   color: #4c93cb;
@@ -550,6 +552,7 @@ li.archive-day.day-31 { background: #fcfcfc; }
   width: 93px;
   height: 93px;
   margin: 0 0 10px 10px;
+  transition: all 200ms ease-in-out;
 }
 
 .overview div.photo:hover {
@@ -583,6 +586,7 @@ li.archive-day.day-31 { background: #fcfcfc; }
 .overview div.watched img.poster, .overview div.listened img.poster {
   max-height: 134px;
   max-width: 94px;
+  transition: all 200ms ease-in-out;
 }
 .overview div.watched img.poster:hover, .overview div.listened img.poster:hover {
   cursor: pointer;
@@ -683,6 +687,11 @@ li.archive-day.day-31 { background: #fcfcfc; }
     margin: 0 1em 1em 0;
     width: 100px;
     height: 100px; 
+    transition: all 200ms ease-in-out;
+}
+
+.photos-overview div.photo {
+    transition: all 200ms ease-in-out;
 }
 
 #summary #photos .photo:hover {
@@ -703,6 +712,7 @@ li.archive-day.day-31 { background: #fcfcfc; }
     margin: 0 1em 1em 0;
     width: 100px;
     height: 150px;
+    transition: all 200ms ease-in-out;
 }
 #summary #watching .watched:hover {
   cursor: pointer;
@@ -717,6 +727,7 @@ li.archive-day.day-31 { background: #fcfcfc; }
     margin: 0 1em 1em 0;
     max-width: 150px;
     max-height: 150px;
+    transition: all 200ms ease-in-out;
 }
 #summary #listening .listened:hover {
   cursor: pointer;
