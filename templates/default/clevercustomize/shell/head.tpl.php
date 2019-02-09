@@ -2,7 +2,8 @@
 
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#333333">
 
-<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway" rel="stylesheet" />
+<link href="<?=\Idno\Core\site()->config()->url;?>IdnoPlugins/CleverCustomize/fonts/raleway/stylesheet.css" rel="stylesheet" />
+<link href="<?=\Idno\Core\site()->config()->url;?>IdnoPlugins/CleverCustomize/fonts/playfair-display/stylesheet.css" rel="stylesheet" />
 
 <link rel="alternate" type="application/json" title="cleverdevil"
       href="https://cleverdevil.io/?_t=jsonfeed"/>
