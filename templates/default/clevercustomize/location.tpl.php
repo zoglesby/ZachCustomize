@@ -27,7 +27,7 @@
             marker.bindPopup(
                 "<b style=\"font-size: 14px\">At time of posting:</b><br>" + 
                 "<ul style=\"list-style-type: none; margin: 1em 0 0 0; padding-left: 0.25em\">" +
-                "  <li>⛰️ <?= $location_meta['altitude'] ?>feet elevation</li>" +
+                "  <li>⛰️ <?= $location_meta['altitude'] ?> feet elevation</li>" +
                 "  <li>🔍 <?= $location_meta['motion'][0] ?></li>" + 
                 "  <li>💨 <?= max($location_meta['speed'], 0) ?> mph</li>" +
                 "  <li>🔋 <?= round($location_meta['battery_level'] * 100, 0) ?>% charged, <?= $location_meta['battery_state'] ?></li>" +
