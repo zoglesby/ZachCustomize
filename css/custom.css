@@ -685,8 +685,8 @@ li.archive-day.day-31 { background: #fcfcfc; }
 #summary #photos .photo {
     float: left;
     margin: 0 1em 1em 0;
-    width: 100px;
-    height: 100px; 
+    width: 159px;
+    height: 159px; 
     transition: all 200ms ease-in-out;
 }
 
@@ -710,8 +710,8 @@ li.archive-day.day-31 { background: #fcfcfc; }
 #summary #watching .watched {
     float: left;
     margin: 0 1em 1em 0;
-    width: 100px;
-    height: 150px;
+    width: 50px;
+    height: 75px;
     transition: all 200ms ease-in-out;
 }
 #summary #watching .watched:hover {
@@ -725,8 +725,8 @@ li.archive-day.day-31 { background: #fcfcfc; }
 #summary #listening .listened {
     float: left;
     margin: 0 1em 1em 0;
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 75px;
+    max-height: 75px;
     transition: all 200ms ease-in-out;
 }
 #summary #listening .listened:hover {
