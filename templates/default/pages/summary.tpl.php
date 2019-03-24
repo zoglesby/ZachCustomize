@@ -221,6 +221,36 @@ if (array_key_exists("Watching", $entities)) {
 ?>
 
 
+<!-- played -->
+<?php
+if (array_key_exists("Play", $entities)) {
+?>
+<section id="play">
+    <h2><?= $typemap["Play"] ?>Play</h2>
+    <?php
+    foreach ($entities["Play"] as $play) {
+        $art = '';
+        if ($attachments = $play->getAttachments()) {
+            foreach ($attachments as $attachment) {
+                $art = '<img src="' . $attachment['url'] . '" class="art" alt="' . $play->getTitle()  . '" title="' . $play->getTitle() . '">';
+                break;
+            }
+        }
+    ?>
+        <div class="played">
+            <a href="<?= $play->getURL() ?>">
+                <?= $art ?>
+            </a>
+        </div>
+    <?php
+    }
+    ?>
+</section>
+<?php
+}
+?>
+
+
 <!-- listened -->
 <?php
 if (array_key_exists("Listen", $entities)) {

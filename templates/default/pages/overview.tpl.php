@@ -177,6 +177,29 @@
         ?>
     </div>
 
+    <!-- played -->
+    <div class="overview-played">
+        <h2><i class="fa fa-gamepad"></i>Played</h2>
+        <?php
+        foreach ($played as $play) {
+            $art = '';
+            if ($attachments = $play->getAttachments()) {
+                foreach ($attachments as $attachment) {
+                    $art = '<img src="' . $attachment['url'] . '" class="art" alt="' . $play->getTitle()  . '" title="' . $play->getTitle() . '">';
+                    break;
+                }
+            }
+        ?>
+            <div class="played">
+                <a href="<?= $play->getURL() ?>">
+                    <?= $art ?>
+                </a>
+            </div>
+        <?php
+        }
+        ?>
+    </div>
+
     <!-- listened -->
     <div class="overview-listened">
         <h2><i class="fa fa-volume-up"></i>Listened</h2>

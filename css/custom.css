@@ -571,24 +571,24 @@ li.archive-day.day-31 { background: #fcfcfc; }
   margin: 0 0 10px 0;
 }
 
-/* watched and listened */
-.overview div.overview-watched, .overview div.overview-listened {
+/* watched and listened and played */
+.overview div.overview-watched, .overview div.overview-listened, .overview div.overview-played {
   width: 345px;
   background: white;
   margin: 0 20px 20px 0;
   padding: 15px;
   overflow: hidden;
 }
-.overview div.watched, .overview div.listened {
+.overview div.watched, .overview div.listened, .overview div.played {
   float: left;
   margin: 0 0 10px 10px;
 }
-.overview div.watched img.poster, .overview div.listened img.poster {
+.overview div.watched img.poster, .overview div.listened img.poster, .overview div.played img.art {
   max-height: 134px;
   max-width: 94px;
   transition: all 200ms ease-in-out;
 }
-.overview div.watched img.poster:hover, .overview div.listened img.poster:hover {
+.overview div.watched img.poster:hover, .overview div.listened img.poster:hover, .overview div.played img.art:hover {
   cursor: pointer;
   opacity: 0.75;
 }
@@ -718,6 +718,22 @@ li.archive-day.day-31 { background: #fcfcfc; }
   cursor: pointer;
   opacity: 0.7;
 }
+
+#summary #play {
+    overflow: hidden;
+}
+#summary #play .played {
+    float: left;
+    margin: 0 1em 1em 0;
+    width: 75px;
+    height: 75px;
+    transition: all 200ms ease-in-out;
+}
+#summary #play .played:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
 
 #summary #listening {
     overflow: hidden;
