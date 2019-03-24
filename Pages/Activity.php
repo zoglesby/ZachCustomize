@@ -7,7 +7,7 @@
 
             function getContent()
             {
-                $this->arguments[0] = '/locations/food/watching/listen';
+                $this->arguments[0] = '/locations/food/watching/listen/play';
                 return parent::getContent();
             }
 
