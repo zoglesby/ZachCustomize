@@ -36,6 +36,11 @@
     background-color: rgba(32,32,32,0.8) !important;
   }
 
+  .idno-content .multiple-images .photo-view-more {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    border-color: rgba(0, 0, 0, 0.3) !important;
+  }
+
   /* archive */
   li.archive-day.day-1  { background-color: rgba(192,192,192,0.80) !important }
   li.archive-day.day-2  { background-color: rgba(193,193,193,0.80) !important }
@@ -72,7 +77,7 @@
   /* overview */
   .overview-photos, .overview-interactions, 
   .overview-watched, .overview-checkins,  
-  .overview-microblog {
+  .overview-microblog, .overview-played, .overview-listened {
     background-color: rgba(0,0,0,0.8) !important;
     color: #eee !important;
   }
