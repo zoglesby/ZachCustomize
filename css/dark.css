@@ -26,7 +26,11 @@
   .idno-content h2 a, .posse a, .navbar a {
     color: white !important;
   }
-  
+
+  .idno-content .icon-container img {
+    background-color: white !important;
+  }
+
   .unfurl-block a {
     color: #eee !important;
   }
