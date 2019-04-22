@@ -1,3 +1,22 @@
+<script type="text/javascript">
+  function setThemePreference(preference) {
+    Cookies.set('theme', preference);
+    window.location.reload(false);
+  }
+</script>
+
+<div id="theme-switcher">
+  <a href="#" onclick="setThemePreference('default'); return null;">
+    <div><i class="fa fa-globe-americas <?= ($_COOKIE['theme'] == 'default' || $_COOKIE['theme'] == null) ? 'active' : '' ?>"></i></div>
+  </a>
+  <a href="#" onclick="setThemePreference('dark'); return null;">
+    <div><i class="fa fa-moon <?= $_COOKIE['theme'] == 'dark' ? 'active' : '' ?>"></i></div>
+  </a>
+  <a href="#" onclick="setThemePreference('light'); return null;">
+    <div><i class="fa fa-sun <?= $_COOKIE['theme'] == 'light' ? 'active' : '' ?>"></i></div>
+  </a>
+</div>
+
 <?php
 if ($_SERVER['REQUEST_URI'] != "/now") {
 ?>

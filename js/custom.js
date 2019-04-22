@@ -1,3 +1,7 @@
+var toggleIgnoreDark = function() {
+    
+}
+
 $(document).ready(function(){
     /* Super fun! Thanks for the inspiration aaronparecki.com and seblog.nl */
     let photo = document.querySelector('.namebadge img')

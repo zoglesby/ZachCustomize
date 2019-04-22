@@ -1,10 +1,6 @@
 /**
  * Dark mode!
  */
-@media (prefers-color-scheme: light) {
-}
-
-@media (prefers-color-scheme: dark) {
   .idno-content, .page-pages .page-body, .archive-index, #summary {
     background-color: rgba(0,0,0,0.8) !important;
     color: #eee !important;
@@ -125,9 +121,19 @@
   }
 
   /* now */
-  #current-status, #map-nav {
+  #current-status, #map-nav, #theme-switcher {
     background-color: rgba(0,0,0,0.8) !important;
     color: #eee !important;
+  }
+
+  #theme-switcher a {
+    color: #333;
+  }
+  #theme-switcher a .active {
+    color: white;
+  }
+  #theme-switcher a:hover {
+    color: #4c93cb;
   }
 
   /* 🕸💍 */
@@ -146,4 +152,3 @@
     background-color: rgba(50,50,50,0.8) !important;
     color: #eee !important;
   }
-}
