@@ -46,7 +46,7 @@
 
                 $query = "select distinct date(created) from entities";
 
-                $db = \Idno\Core\Idno::site()->db->getClient();
+                $db = \Idno\Core\Idno::site()->db()->getClient();
                 $statement = $db->prepare($query);
                 $statement->execute();
                 $rows = $statement->fetchAll(\PDO::FETCH_ASSOC);

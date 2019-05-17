@@ -44,42 +44,46 @@
                     Webservice::post("https://micro.blog/ping", array(
                         'url' => "https://cleverdevil.io/content/all/?_t=microblog"
                     ));
-
-                    $status_file = fopen("current.json", "r");
-                    $raw_json = fgets($status_file);
-                    $status = json_decode($raw_json, true);
                     
-                    $ann = $obj->addAnnotation(
-                        'location-metadata', 'cleverdevil.io', 'https://cleverdevil.io/', 
-                        null, '', null, null, null, ["location" => $status], false
-                    );
-                    
-                    // Look up current weather conditions and add as an annotation based upon my
-                    // current location.
-                    $darksky_api_key = \Idno\Core\Idno::site()->config()->darksky_api_key;
-                    
-                    $weather_url = "https://api.darksky.net/forecast/" . $darksky_api_key . "/";
-                    $weather_url .= $status['y'] . "," . $status['x'];
-                    
-                    $response = Webservice::get($weather_url);
-                    if ($response['response'] == 200) {
-                        $weather = json_decode($response['content']);
-
-                        $icon_url = \Idno\Core\site()->config()->url;
-                        $icon_url .= "IdnoPlugins/CleverCustomize/images/weather/";
-                        $icon_url .= $weather->currently->icon . ".svg";
-
-                        $weather_content = 'Weather at time/location of posting &mdash; ';
-                        $weather_content .= $weather->currently->summary . ' with a temperature of ';
-                        $weather_content .= $weather->currently->temperature . '&deg;F and ';
-                        $weather_content .= ($weather->currently->humidity * 100) . '% humidity.';
-
+                    // add location and weather information if not already present
+                    $location_meta = $obj->getAnnotations('location-metadata');
+                    if (empty($location_meta)) {
+                        $status_file = fopen("current.json", "r");
+                        $raw_json = fgets($status_file);
+                        $status = json_decode($raw_json, true);
+                        
                         $ann = $obj->addAnnotation(
-                            'reply', 'Dark Sky', 'https://darksky.net/', 
-                            $icon_url, $weather_content, null, null, null,
-                            ["weather" => $weather ],
-                            false
+                            'location-metadata', 'cleverdevil.io', 'https://cleverdevil.io/', 
+                            null, '', null, null, null, ["location" => $status], false
                         );
+                        
+                        // Look up current weather conditions and add as an annotation based upon my
+                        // current location.
+                        $darksky_api_key = \Idno\Core\Idno::site()->config()->darksky_api_key;
+                        
+                        $weather_url = "https://api.darksky.net/forecast/" . $darksky_api_key . "/";
+                        $weather_url .= $status['y'] . "," . $status['x'];
+                        
+                        $response = Webservice::get($weather_url);
+                        if ($response['response'] == 200) {
+                            $weather = json_decode($response['content']);
+
+                            $icon_url = \Idno\Core\site()->config()->url;
+                            $icon_url .= "IdnoPlugins/CleverCustomize/images/weather/";
+                            $icon_url .= $weather->currently->icon . ".svg";
+
+                            $weather_content = 'Weather at time/location of posting &mdash; ';
+                            $weather_content .= $weather->currently->summary . ' with a temperature of ';
+                            $weather_content .= $weather->currently->temperature . '&deg;F and ';
+                            $weather_content .= ($weather->currently->humidity * 100) . '% humidity.';
+
+                            $ann = $obj->addAnnotation(
+                                'reply', 'Dark Sky', 'https://darksky.net/', 
+                                $icon_url, $weather_content, null, null, null,
+                                ["weather" => $weather ],
+                                false
+                            );
+                        }
                     }
                 });
                 
