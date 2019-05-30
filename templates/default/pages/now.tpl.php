@@ -30,14 +30,14 @@
                         $wifi_state = "wifi-connected";
                     }
                     
-                    $motion_icon = "fa-couch"; // stationary
+                    $motion_icon = "fa-male"; // stationary
                     foreach ($status['motion'] as $value) {
                         if ($value == "driving") {
                             $motion_icon = "fa-car";
                         } else if ($value == "walking") {
-                            $motion_icon = "fa-shoe-prints";
+                            $motion_icon = "fa-street-view";
                         } else if ($value == "running") {
-                            $motion_icon = "fa-walking";
+                            $motion_icon = "fa-street-view";
                         } else if ($value == "cycling") {
                             $motion_icon = "fa-bicycle";
                         }
