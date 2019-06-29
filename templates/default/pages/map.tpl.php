@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script>
+    <!DOCTYPE html>
+    <script src="https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.js"></script>
 
-<div class="row page-map">
-    <div class="col-md-10 col-md-offset-1">
-        <div>
-            <div class="row">
-                
+    <div class="row page-map">
+        <div class="col-md-10 col-md-offset-1">
+            <div>
+                <div class="row">
+                    
                 <div id="map-nav">
                     <a class="left" href="/map?date=<?= date('Y-m-d', strtotime($date . ' -1 day')) ?>"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
                     <a class="right" href="/map?date=<?= date('Y-m-d', strtotime($date . ' +1 day')) ?>"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
@@ -15,7 +15,7 @@
                 <script>
                 mapkit.init({
                     authorizationCallback: function(done) {
-                        done('eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjdSUEc2NFdDMjUifQ.eyJvcmlnaW4iOiJodHRwczovL2NsZXZlcmRldmlsLmlvIiwiaXNzIjoiN1Y2VzUyNTY2MyIsImlhdCI6MTUyODM0MjIwMiwiZXhwIjoxODQzNzAyMjAyfQ.Co3C5lFlKcV5BRr5fIi4k1KFyQ9qQx6WWas4e6k2UmJgjyZE56PrG4NHdRFgh2JuGhf39N06DVVYqaO93MKN3g');
+                        done('eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IkQzNVJIWVVVMjcifQ.eyJvcmlnaW4iOiJodHRwczovL2NsZXZlcmRldmlsLmlvIiwiaXNzIjoiN1Y2VzUyNTY2MyIsImlhdCI6MTU2MTE3MDY0NiwiZXhwIjoxODc2NTMwNjQ2fQ.pI7T85udg8OKg-4QaLeFyJLqO7_caiy_VDDZjntgUyeL_izSDEudsS9xCGOeKwjoKTalc4pzOoHk80e8AN6Qrg');
                     }
                 });
                 var map = new mapkit.Map("map");

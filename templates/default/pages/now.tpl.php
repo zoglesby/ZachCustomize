@@ -53,7 +53,7 @@
                 <script>
                 mapkit.init({
                     authorizationCallback: function(done) {
-                        done('eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjdSUEc2NFdDMjUifQ.eyJvcmlnaW4iOiJodHRwczovL2NsZXZlcmRldmlsLmlvIiwiaXNzIjoiN1Y2VzUyNTY2MyIsImlhdCI6MTUyODM0MjIwMiwiZXhwIjoxODQzNzAyMjAyfQ.Co3C5lFlKcV5BRr5fIi4k1KFyQ9qQx6WWas4e6k2UmJgjyZE56PrG4NHdRFgh2JuGhf39N06DVVYqaO93MKN3g');
+                        done('eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IkQzNVJIWVVVMjcifQ.eyJvcmlnaW4iOiJodHRwczovL2NsZXZlcmRldmlsLmlvIiwiaXNzIjoiN1Y2VzUyNTY2MyIsImlhdCI6MTU2MTE3MDY0NiwiZXhwIjoxODc2NTMwNjQ2fQ.pI7T85udg8OKg-4QaLeFyJLqO7_caiy_VDDZjntgUyeL_izSDEudsS9xCGOeKwjoKTalc4pzOoHk80e8AN6Qrg');
                     }
                 });
 
