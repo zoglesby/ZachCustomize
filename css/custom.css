@@ -807,4 +807,48 @@ li.archive-day.day-31 { background: #fcfcfc; }
     padding: 0.5em 1em;
     width: 9em;
 }
-<
+
+/**
+ * Following paage
+ */
+.following {
+    background: white;
+    padding: 1em 4em 4em 4em;
+}
+
+@media (min-width: 768px) {
+    .channels {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+}
+
+@media (min-width: 992px) {
+    .channels {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+.channel {
+    border-radius: 5px;
+    background: #f6f6f6;
+    margin: 1em 0;
+    padding: 0.5em 1em 2em 2em;
+    break-inside: avoid;
+}
+
+.channel ul {
+    margin: 0;
+    padding: 0;
+}
+.channel li {
+    padding-left: 5px;
+    list-style-position: inside;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
