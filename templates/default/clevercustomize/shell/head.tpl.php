@@ -7,9 +7,10 @@
 <link href="<?=\Idno\Core\site()->config()->url;?>IdnoPlugins/CleverCustomize/fonts/raleway/stylesheet.css" rel="stylesheet" />
 <link href="<?=\Idno\Core\site()->config()->url;?>IdnoPlugins/CleverCustomize/fonts/playfair-display/stylesheet.css" rel="stylesheet" />
 
-<link rel="alternate" type="application/json" title="cleverdevil"
+<link rel="feed" type="application/json" 
+      title="cleverdevil: front page content"
       href="https://cleverdevil.io/?_t=jsonfeed"/>
-<link rel="alternate feed" type="application/json"
+<link rel="feed" type="application/json"
       title="cleverdevil: all content"
       href="https://cleverdevil.io/content/all?_t=jsonfeed"/>
 
