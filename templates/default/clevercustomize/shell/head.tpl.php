@@ -8,11 +8,14 @@
 <link href="<?=\Idno\Core\site()->config()->url;?>IdnoPlugins/CleverCustomize/fonts/playfair-display/stylesheet.css" rel="stylesheet" />
 
 <link rel="feed" type="application/json" 
-      title="cleverdevil: front page content"
+      title="cleverdevil: featured content"
       href="https://cleverdevil.io/?_t=jsonfeed"/>
 <link rel="feed" type="application/json"
       title="cleverdevil: all content"
       href="https://cleverdevil.io/content/all?_t=jsonfeed"/>
+<link rel="feed" type="application/json"
+      title="cleverdevil: microblog content"
+      href="https://cleverdevil.io/content/all?_t=microblog"/>
 
 <link rel="stylesheet" href="<?=\Idno\Core\site()->config()->url;?>IdnoPlugins/CleverCustomize/css/custom.css" type="text/css" media="screen" />
 

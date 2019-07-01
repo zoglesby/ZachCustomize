@@ -6,6 +6,16 @@
         <a class="u-url" href="/following" style="display:none">Following</a>
         <a class="u-author" href="https://cleverdevil.io"></a>
         
+        <p>
+           Below is a list of my subscriptions from around the web that I read in
+           <a href="https://alltogethernow.io">my social reader of choice</a>. 
+           Subscriptions are pulled directly from 
+           <a href="https://aperture.p3k.io">Aperture</a>, which is a service
+           that handles fetching content from my subscriptions, tracking what
+           content I have and have not read, and more.
+        </p>
+           
+
         <div class="channels">
         <?php
         foreach ($channels as $channel) {
