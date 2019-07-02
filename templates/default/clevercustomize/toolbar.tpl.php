@@ -71,9 +71,9 @@ if ($_SERVER['REQUEST_URI'] != "/now") {
 ?>
 
 <div class="🕸💍">
-  <a href="https://🕸💍.ws/⛈🛍✈️/previous">👈🏼</a>
+  <a href="https://🕸💍.ws/🏘📩/previous">👈🏼</a>
   <a href="https://🕸💍.ws/">🕸💍</a>
-  <a href="https://🕸💍.ws/⛈🛍✈️/next">👉🏼</a>
+  <a href="https://🕸💍.ws/🏘📩/next">👉🏼</a>
 </div>
 
 <?php
