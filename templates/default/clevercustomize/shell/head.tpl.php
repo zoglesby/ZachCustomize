@@ -8,13 +8,13 @@
 <link href="<?=\Idno\Core\site()->config()->url;?>IdnoPlugins/CleverCustomize/fonts/playfair-display/stylesheet.css" rel="stylesheet" />
 
 <link rel="feed" type="application/json" 
-      title="cleverdevil: featured content"
+      title="Zach: featured content"
       href="https://zach.oglesby.co/?_t=jsonfeed"/>
 <link rel="feed" type="application/json"
-      title="cleverdevil: all content"
+      title="Zach: all content"
       href="https://zach.oglesby.co/content/all?_t=jsonfeed"/>
 <link rel="feed" type="application/json"
-      title="cleverdevil: microblog content"
+      title="Zach: microblog content"
       href="https://zach.oglesby.co/content/all?_t=microblog"/>
 
 <link rel="stylesheet" href="<?=\Idno\Core\site()->config()->url;?>IdnoPlugins/CleverCustomize/css/custom.css" type="text/css" media="screen" />

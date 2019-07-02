@@ -20,7 +20,7 @@
             
             var group = new L.featureGroup();
             var marker = L.marker([<?= $location_meta['y'] ?>, <?= $location_meta['x'] ?>], {
-                title: "Jonathan's location at time of posting"
+                title: "Zach's location at time of posting"
             });
             marker.addTo(map);
             group.addLayer(marker);
