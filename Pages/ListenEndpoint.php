@@ -27,7 +27,7 @@
                 $contentType = new \IdnoPlugins\Listen\ContentType();
                 
                 $entity = $contentType->createEntity();
-                $entity->setOwner('http://cleverdevil.io/profile/cleverdevil');
+                $entity->setOwner('http://zach.oglesby.co/profile/zach');
                 $result = $entity->saveDataFromInput();
                 $entity->publish();
                 

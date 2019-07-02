@@ -4,7 +4,7 @@
       <div class="h-feed row">
         <h1 class="p-name"><i class="fa fa-rss"></i> Following</h1>
         <a class="u-url" href="/following" style="display:none">Following</a>
-        <a class="u-author" href="https://cleverdevil.io"></a>
+        <a class="u-author" href="https://zach.oglesby.co"></a>
         
         <p>
            Below is a list of my subscriptions from around the web that I read in
@@ -29,7 +29,7 @@
           ?>
             <li class="h-entry" id="<?= md5($feed->url) ?>">
               <div class="follow-of-meta" style="display: none">
-                <a class="u-author" href="https://cleverdevil.io"></a>
+                <a class="u-author" href="https://zach.oglesby.co"></a>
                 <span class="p-name">Following <?= $name ?></span>
                 <a class="u-url" href="/following#<?= md5($feed->url) ?>"></a>
                 <div class="e-content">

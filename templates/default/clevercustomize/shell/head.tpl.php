@@ -1,6 +1,6 @@
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 
-<link rel="microsub" href="https://aperture.p3k.io/microsub/4">
+<link rel="microsub" href="https://aperture.p3k.io/microsub/307">
 
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#333333">
 
@@ -9,13 +9,13 @@
 
 <link rel="feed" type="application/json" 
       title="cleverdevil: featured content"
-      href="https://cleverdevil.io/?_t=jsonfeed"/>
+      href="https://zach.oglesby.co/?_t=jsonfeed"/>
 <link rel="feed" type="application/json"
       title="cleverdevil: all content"
-      href="https://cleverdevil.io/content/all?_t=jsonfeed"/>
+      href="https://zach.oglesby.co/content/all?_t=jsonfeed"/>
 <link rel="feed" type="application/json"
       title="cleverdevil: microblog content"
-      href="https://cleverdevil.io/content/all?_t=microblog"/>
+      href="https://zach.oglesby.co/content/all?_t=microblog"/>
 
 <link rel="stylesheet" href="<?=\Idno\Core\site()->config()->url;?>IdnoPlugins/CleverCustomize/css/custom.css" type="text/css" media="screen" />
 

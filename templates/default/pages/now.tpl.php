@@ -5,10 +5,7 @@
     <div class="col-md-10 col-md-offset-1">
         <div>
             <div class="row">
-                <div style="text-align: center">
-                    <a target="_blank" href="https://trakt.tv/users/cleverdevil"><img width="500" height="40" alt="cleverdevil" src="https://widgets.trakt.tv/users/8f26448c4265bd6077447ba88d84cc75/watched/thin@2x.jpg" style="margin: 0 auto 2em auto"/></a>                
-                </div>
-
+                
                 <ul id="current-status-now">
                 <?php
                     $battery_icon = "fa-battery-full";
@@ -53,7 +50,7 @@
                 <script>
                 mapkit.init({
                     authorizationCallback: function(done) {
-                        done('eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IkQzNVJIWVVVMjcifQ.eyJvcmlnaW4iOiJodHRwczovL2NsZXZlcmRldmlsLmlvIiwiaXNzIjoiN1Y2VzUyNTY2MyIsImlhdCI6MTU2MTE3MDY0NiwiZXhwIjoxODc2NTMwNjQ2fQ.pI7T85udg8OKg-4QaLeFyJLqO7_caiy_VDDZjntgUyeL_izSDEudsS9xCGOeKwjoKTalc4pzOoHk80e8AN6Qrg');
+                        done('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkIyRFRBVkEyVFgifQ.eyJpc3MiOiJGSlBINjNBTU5ZIiwiaWF0IjoxNTYyMDgxNjEyLCJleHAiOjE1OTY5MDA4MTIsIm9yaWdpbiI6Imh0dHBzOi8vemFjaC5vZ2xlc2J5LmNvIn0.xZPyNvgnHkbaiQIonaD0SEeoOK-5E-mbbYtBOUe-xLnlDH3XHd764bKcZ7I2pClQ_8uBWGbbhhZ3WWZya7Ok9w');
                     }
                 });
 
@@ -62,7 +59,7 @@
                     currentLocation, 
                     new mapkit.CoordinateSpan(0.167647972, 0.354985255)
                 );
-                var meAnnotation = new mapkit.MarkerAnnotation(currentLocation, { title: "cleverdevil", glyphText: "😈" });
+                var meAnnotation = new mapkit.MarkerAnnotation(currentLocation, { title: "Zach", glyphText: "🤖" });
 
                 var map = new mapkit.Map("map", {
                     'mapType': mapkit.Map.MapTypes.Hybrid

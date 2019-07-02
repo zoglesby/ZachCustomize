@@ -15,7 +15,7 @@
                 <script>
                 mapkit.init({
                     authorizationCallback: function(done) {
-                        done('eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IkQzNVJIWVVVMjcifQ.eyJvcmlnaW4iOiJodHRwczovL2NsZXZlcmRldmlsLmlvIiwiaXNzIjoiN1Y2VzUyNTY2MyIsImlhdCI6MTU2MTE3MDY0NiwiZXhwIjoxODc2NTMwNjQ2fQ.pI7T85udg8OKg-4QaLeFyJLqO7_caiy_VDDZjntgUyeL_izSDEudsS9xCGOeKwjoKTalc4pzOoHk80e8AN6Qrg');
+                        done('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkIyRFRBVkEyVFgifQ.eyJpc3MiOiJGSlBINjNBTU5ZIiwiaWF0IjoxNTYyMDgxNjEyLCJleHAiOjE1OTY5MDA4MTIsIm9yaWdpbiI6Imh0dHBzOi8vemFjaC5vZ2xlc2J5LmNvIn0.xZPyNvgnHkbaiQIonaD0SEeoOK-5E-mbbYtBOUe-xLnlDH3XHd764bKcZ7I2pClQ_8uBWGbbhhZ3WWZya7Ok9w');
                     }
                 });
                 var map = new mapkit.Map("map");

@@ -43,7 +43,7 @@
                     
                     // Notify Micro.blog of an update
                     Webservice::post("https://micro.blog/ping", array(
-                        'url' => "https://cleverdevil.io/content/all/?_t=microblog"
+                        'url' => "https://zach.oglesby.co/content/all/?_t=microblog"
                     ));
                     
                     // add location and weather information if not already present
@@ -54,7 +54,7 @@
                         $status = json_decode($raw_json, true);
                         
                         $ann = $obj->addAnnotation(
-                            'location-metadata', 'cleverdevil.io', 'https://cleverdevil.io/', 
+                            'location-metadata', 'zach', 'https://zach.oglesby.co/', 
                             null, '', null, null, null, ["location" => $status], false
                         );
                         
