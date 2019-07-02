@@ -42,7 +42,7 @@
                 $title = $description;
                 
                 $token = \Idno\Core\Idno::site()->config()->geo_token;
-                $url = 'https://tack.ghostcorp.net/api/range?token=' . $token;
+                $url = 'https://track.ghostcorp.net/api/range?token=' . $token;
                 $url = $url . '&start=' . $date_string;
                 $points = file_get_contents($url); 
                 
