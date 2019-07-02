@@ -8,7 +8,7 @@
         if ($object->getActivityStreamsObjectType() != 'place') {
 ?>
         <div id="location-annotation" style="margin: 1em 0 2em 0">
-            <b>Jonathan's Location at Posting</b> <small>(click the marker to see more)</small>
+            <b>Zach's Location at Posting</b> <small>(click the marker to see more)</small>
             <div id="location-annotation-map-<?= $object->_id ?>" style="width: 100%; height: 250px; border: 1px solid #666"></div>
             <script>
             var map = L.map('location-annotation-map-<?= $object->_id ?>', {

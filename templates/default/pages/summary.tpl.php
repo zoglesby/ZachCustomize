@@ -3,7 +3,7 @@
 
 <h1><i class="fa fa-feather"></i>Summary for <?= $description ?></h1>
 
-<p>In <?= $description ?>, <a href="/archive/<?= $year ?>/<?= $month ?>">Jonathan posted <?= $count ?> times</a>.</p>
+<p>In <?= $description ?>, <a href="/archive/<?= $year ?>/<?= $month ?>">Zach's posted <?= $count ?> times</a>.</p>
 
 <ul id="content-types">
 <?php
