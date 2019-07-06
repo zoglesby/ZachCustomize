@@ -38,7 +38,7 @@
                 </div>
               </div>
                 
-              <a class="u-follow-of" href="<?= $feed->url ?>"><?= $name ?></a>
+              <a class="u-follow-of" onclick="window.open('https://monocle.p3k.io/preview?url=<?= $feed->url ?>')" href="<?= $feed->url ?>"><?= $name ?></a>
             </li>
           <?php
           }
