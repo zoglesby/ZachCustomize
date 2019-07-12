@@ -1,3 +1,12 @@
+<?php
+
+$theme = 'default';
+if (isset($_COOKIE['theme'])) {
+    $theme = $_COOKIE['theme'];
+}
+
+?>
+
 <script type="text/javascript">
   function setThemePreference(preference) {
     Cookies.set('theme', preference);
@@ -7,13 +16,13 @@
 
 <div id="theme-switcher">
   <a href="#" onclick="setThemePreference('default'); return null;">
-    <div><i class="fa fa-globe-w <?= ($_COOKIE['theme'] == 'default' || $_COOKIE['theme'] == null) ? 'active' : '' ?>"></i></div>
+    <div><i class="fa fa-globe-w <?= $theme == 'default' ? 'active' : '' ?>"></i></div>
   </a>
   <a href="#" onclick="setThemePreference('dark'); return null;">
-    <div><i class="fa fa-moon <?= $_COOKIE['theme'] == 'dark' ? 'active' : '' ?>"></i></div>
+    <div><i class="fa fa-moon <?= $theme == 'dark' ? 'active' : '' ?>"></i></div>
   </a>
   <a href="#" onclick="setThemePreference('light'); return null;">
-    <div><i class="fa fa-sun <?= $_COOKIE['theme'] == 'light' ? 'active' : '' ?>"></i></div>
+    <div><i class="fa fa-sun <?= $theme == 'light' ? 'active' : '' ?>"></i></div>
   </a>
 </div>
 

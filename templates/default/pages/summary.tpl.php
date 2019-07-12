@@ -1,7 +1,7 @@
 <div id="summary">
 <div id="summary-container" class="col-md-20 col-md-offset-0">
 
-<h1><i class="fa fa-feather"></i>Summary for <?= $description ?></h1>
+<h1><i class="fa fa-social-home"></i>Summary for <?= $description ?></h1>
 
 <p>In <?= $description ?>, <a href="/archive/<?= $year ?>/<?= $month ?>">Zach's posted <?= $count ?> times</a>.</p>
 
@@ -316,7 +316,7 @@ if (array_key_exists("Status updates", $entities)) {
             <?php
             }
             ?>
-            <div><?= $icon ?><?= $status->getBody() ?></div>
+            <div><?= $status->getBody() ?></div>
             <a href="<?= $status->getURL() ?>">
                 <time datetime="<?= date(DATE_ISO8601, $status->created) ?>"><?= strftime('%d %b %Y', $status->created) ?></time>
             </a>

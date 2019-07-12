@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="<?=\Idno\Core\site()->config()->url;?>IdnoPlugins/CleverCustomize/css/custom.css" type="text/css" media="screen" />
 
 <?php
-if (!$_COOKIE["theme"] || $_COOKIE["theme"] == "default") {
+if (!isset($_COOKIE["theme"]) || $_COOKIE["theme"] == "default") {
 ?>
 <style type="text/css">
 @media (prefers-color-scheme: dark) {
