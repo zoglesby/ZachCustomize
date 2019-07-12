@@ -103,7 +103,6 @@
                         'typemap'      => $typemap,
                         'contentTypes' => array(),
                         'count'        => $count,
-                        'subject'      => $query,
                         'date'         => $start,
                         'month'        => $month,
                         'year'         => $year,
