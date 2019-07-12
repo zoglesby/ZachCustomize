@@ -20,7 +20,6 @@
                 \Idno\Core\site()->routes()->addRoute('/now', '\IdnoPlugins\CleverCustomize\Pages\Now');
                 \Idno\Core\site()->routes()->addRoute('/map', '\IdnoPlugins\CleverCustomize\Pages\Map');
                 \Idno\Core\site()->routes()->addRoute('/following', '\IdnoPlugins\CleverCustomize\Pages\Following');
-                \Idno\Core\site()->routes()->addRoute('/nicknames', '\IdnoPlugins\CleverCustomize\Pages\Nicknames');
                 \Idno\Core\site()->routes()->addRoute('/summary/([0-9]+)/([0-9]+)/([0-9]+)/?', '\IdnoPlugins\CleverCustomize\Pages\Summary');
                 \Idno\Core\site()->routes()->addRoute('/summary/([0-9]+)/([0-9]+)/?', '\IdnoPlugins\CleverCustomize\Pages\Summary');
                 \Idno\Core\site()->routes()->addRoute('/listen/hook/', '\IdnoPlugins\CleverCustomize\Pages\ListenEndpoint', true);
