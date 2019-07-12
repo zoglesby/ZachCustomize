@@ -1,7 +1,7 @@
 <div id="summary">
 <div id="summary-container" class="col-md-20 col-md-offset-0">
 
-<h1><i class="fa fa-feather"></i>Summary for <?= $description ?></h1>
+<h1><i class="fa fa-social-home"></i>Summary for <?= $description ?></h1>
 
 <p>In <?= $description ?>, <a href="/archive/<?= $year ?>/<?= $month ?>">Jonathan posted <?= $count ?> times</a>.</p>
 
@@ -340,8 +340,8 @@ if (array_key_exists("Bookmarked pages", $entities)) {
     <details>
         <summary><?= count($entities["Bookmarked pages"]) ?> likes, reposts, and bookmarks</summary>
         <?php
+        $icon = '';
         foreach ($entities["Bookmarked pages"] as $interaction) {
-            $icon = '';
             $link = $interaction->body;
 
             if (!empty($interaction->targetURL)) {

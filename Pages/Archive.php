@@ -98,7 +98,6 @@
                         'items'        => $feed,
                         'contentTypes' => array(),
                         'count'        => $count,
-                        'subject'      => $query,
                         'date'         => $start,
                         'description'  => $range,
                         'content'      => $friendly_types
