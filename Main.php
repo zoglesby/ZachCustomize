@@ -8,23 +8,23 @@
 
             function registerPages() {
                 // register timeline, activity, and on this day pages
-                \Idno\Core\site()->addPageHandler('/timeline', '\IdnoPlugins\CleverCustomize\Pages\Timeline');
-                \Idno\Core\site()->addPageHandler('/activity', '\IdnoPlugins\CleverCustomize\Pages\Activity');
-                \Idno\Core\site()->addPageHandler('/onthisday/([0-9]+)/([0-9]+)/?', '\IdnoPlugins\CleverCustomize\Pages\OnThisDay');
-                \Idno\Core\site()->addPageHandler('/onthisday/', '\IdnoPlugins\CleverCustomize\Pages\OnThisDay');
-                \Idno\Core\site()->addPageHandler('/8675', '\IdnoPlugins\CleverCustomize\Pages\Jenny');
-                \Idno\Core\site()->addPageHandler('/archive/([0-9]+)/([0-9]+)/([0-9]+)/?', '\IdnoPlugins\CleverCustomize\Pages\Archive');
-                \Idno\Core\site()->addPageHandler('/archive/([0-9]+)/([0-9]+)/?', '\IdnoPlugins\CleverCustomize\Pages\Archive');
-                \Idno\Core\site()->addPageHandler('/archive', '\IdnoPlugins\CleverCustomize\Pages\ArchiveIndex');
-                \Idno\Core\site()->addPageHandler('/overview', '\IdnoPlugins\CleverCustomize\Pages\Overview');
-                \Idno\Core\site()->addPageHandler('/now', '\IdnoPlugins\CleverCustomize\Pages\Now');
-                \Idno\Core\site()->addPageHandler('/map', '\IdnoPlugins\CleverCustomize\Pages\Map');
-                \Idno\Core\site()->addPageHandler('/following', '\IdnoPlugins\CleverCustomize\Pages\Following');
-                \Idno\Core\site()->addPageHandler('/nicknames', '\IdnoPlugins\CleverCustomize\Pages\Nicknames');
-                \Idno\Core\site()->addPageHandler('/summary/([0-9]+)/([0-9]+)/([0-9]+)/?', '\IdnoPlugins\CleverCustomize\Pages\Summary');
-                \Idno\Core\site()->addPageHandler('/summary/([0-9]+)/([0-9]+)/?', '\IdnoPlugins\CleverCustomize\Pages\Summary');
-                \Idno\Core\site()->addPageHandler('/listen/hook/', '\IdnoPlugins\CleverCustomize\Pages\ListenEndpoint', true);
-                \Idno\Core\site()->addPageHandler('/play/hook/', '\IdnoPlugins\CleverCustomize\Pages\PlayEndpoint', true);
+                \Idno\Core\site()->routes()->addRoute('/timeline', '\IdnoPlugins\CleverCustomize\Pages\Timeline');
+                \Idno\Core\site()->routes()->addRoute('/activity', '\IdnoPlugins\CleverCustomize\Pages\Activity');
+                \Idno\Core\site()->routes()->addRoute('/onthisday/([0-9]+)/([0-9]+)/?', '\IdnoPlugins\CleverCustomize\Pages\OnThisDay');
+                \Idno\Core\site()->routes()->addRoute('/onthisday/', '\IdnoPlugins\CleverCustomize\Pages\OnThisDay');
+                \Idno\Core\site()->routes()->addRoute('/8675', '\IdnoPlugins\CleverCustomize\Pages\Jenny');
+                \Idno\Core\site()->routes()->addRoute('/archive/([0-9]+)/([0-9]+)/([0-9]+)/?', '\IdnoPlugins\CleverCustomize\Pages\Archive');
+                \Idno\Core\site()->routes()->addRoute('/archive/([0-9]+)/([0-9]+)/?', '\IdnoPlugins\CleverCustomize\Pages\Archive');
+                \Idno\Core\site()->routes()->addRoute('/archive', '\IdnoPlugins\CleverCustomize\Pages\ArchiveIndex');
+                \Idno\Core\site()->routes()->addRoute('/overview', '\IdnoPlugins\CleverCustomize\Pages\Overview');
+                \Idno\Core\site()->routes()->addRoute('/now', '\IdnoPlugins\CleverCustomize\Pages\Now');
+                \Idno\Core\site()->routes()->addRoute('/map', '\IdnoPlugins\CleverCustomize\Pages\Map');
+                \Idno\Core\site()->routes()->addRoute('/following', '\IdnoPlugins\CleverCustomize\Pages\Following');
+                \Idno\Core\site()->routes()->addRoute('/nicknames', '\IdnoPlugins\CleverCustomize\Pages\Nicknames');
+                \Idno\Core\site()->routes()->addRoute('/summary/([0-9]+)/([0-9]+)/([0-9]+)/?', '\IdnoPlugins\CleverCustomize\Pages\Summary');
+                \Idno\Core\site()->routes()->addRoute('/summary/([0-9]+)/([0-9]+)/?', '\IdnoPlugins\CleverCustomize\Pages\Summary');
+                \Idno\Core\site()->routes()->addRoute('/listen/hook/', '\IdnoPlugins\CleverCustomize\Pages\ListenEndpoint', true);
+                \Idno\Core\site()->routes()->addRoute('/play/hook/', '\IdnoPlugins\CleverCustomize\Pages\PlayEndpoint', true);
 
                 // override header
                 \Idno\Core\Idno::site()->template()->replaceTemplate('shell/toolbar/main','clevercustomize/toolbar');
@@ -38,7 +38,7 @@
             
             function registerEventHooks() {
                 // Hook into the "published" event to inform micro.blog that my feed has been updated 
-                \Idno\Core\site()->addEventHook('published', function (\Idno\Core\Event $event) {
+                \Idno\Core\site()->events()->addListener('published', function (\Idno\Core\Event $event) {
                     $obj = $event->data()['object'];
                     
                     // Notify Micro.blog of an update
@@ -90,7 +90,7 @@
                 
                 // Hook into the "publish" (pre-publish) event to potentially implement better
                 // @-mention shortcuts 
-                \Idno\Core\site()->addEventHook('publish', function (\Idno\Core\Event $event) {
+                \Idno\Core\site()->events()->addListener('publish', function (\Idno\Core\Event $event) {
                     //$obj = $event->data()['object'];
                     //if ($obj instanceof \IdnoPlugins\Status\Status) {
                     //    $obj->body = preg_replace('/@mb:(\w+)/', '<a href="https://micro.blog/$1">@$1</a>', $obj->body);
@@ -98,7 +98,7 @@
                 });
 
                 // Hook into the annotation/add/* events in order to push notifications to my Microsub server
-                \Idno\Core\site()->addEventHook('notify', function (\Idno\Core\Event $event) {
+                \Idno\Core\site()->events()->addListener('notify', function (\Idno\Core\Event $event) {
                     $eventdata    = $event->data();
                     $user         = $eventdata['user'];
                     $notification = $eventdata['notification'];
