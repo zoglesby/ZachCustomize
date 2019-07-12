@@ -316,7 +316,7 @@ if (array_key_exists("Status updates", $entities)) {
             <?php
             }
             ?>
-            <div><?= $icon ?><?= $status->getBody() ?></div>
+            <div><?= $status->getBody() ?></div>
             <a href="<?= $status->getURL() ?>">
                 <time datetime="<?= date(DATE_ISO8601, $status->created) ?>"><?= strftime('%d %b %Y', $status->created) ?></time>
             </a>
@@ -340,8 +340,8 @@ if (array_key_exists("Bookmarked pages", $entities)) {
     <details>
         <summary><?= count($entities["Bookmarked pages"]) ?> likes, reposts, and bookmarks</summary>
         <?php
-        $icon = '';
         foreach ($entities["Bookmarked pages"] as $interaction) {
+            $icon = '';
             $link = $interaction->body;
 
             if (!empty($interaction->targetURL)) {
